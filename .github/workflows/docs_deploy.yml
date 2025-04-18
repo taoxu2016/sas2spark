@@ -35,7 +35,8 @@ jobs:
       - name: Build Sphinx documentation
         run: |
           cd docs # Navigate to the docs directory
-          make html # Build the HTML documentation
+          # Use sphinx-build directly, specifying the source (.) and output (_build/html) dirs
+          sphinx-build -b html . _build/html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4 # Use the popular gh-pages deployment action
